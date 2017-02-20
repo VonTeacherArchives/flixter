@@ -9,6 +9,28 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="container">
+
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#flix-cap-toggle" aria-controls="flix-cap-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="navbar-brand mb-0">Flix-Capacitor</h1>
+
+        <div class="collapse navbar-collapse" id="flix-cap-toggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="#">See All Courses</a>
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Log In</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+      <%= yield %>
+
   </body>
+
 </html>
