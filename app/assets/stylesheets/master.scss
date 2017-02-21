@@ -1,23 +1,80 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400,700');
 
 $gold-yellow: rgba(224,172,42,1);
+$break-first: 991px;
+$break-four-hundred: 400px;
 
 body {
   font-family: 'Lato', sans-serif;
+}
+
+.container {
+  padding: 0;
 }
 
 .navbar {
   -webkit-box-shadow: 0px 3px 3px 0px $gold-yellow;
      -moz-box-shadow: 0px 3px 3px 0px $gold-yellow;
           box-shadow: 0px 3px 3px 0px $gold-yellow;
+  z-index: 1;
 }
 
 .navbar-inverse .navbar-nav .nav-link {
   color: $gold-yellow !important;
-  transition: transform 0.2s;
+  transition: transform 0.4s;
+  @media screen and (max-width: $break-first) {
+    transform-origin: left center;
+  }
 }
 
 .navbar-inverse .navbar-nav .nav-link:hover {
   transform: scale(1.2);
+}
+
+.hero {
+  background: image_url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+      //  -o-background-size: cover;
+          background-size: cover;
+  height: 370px;
+  -webkit-box-shadow: 0px 3px 3px 0px $gold-yellow;
+     -moz-box-shadow: 0px 3px 3px 0px $gold-yellow;
+          box-shadow: 0px 3px 3px 0px $gold-yellow;
+}
+
+.frosted-background {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 5px;
+}
+
+.frosted-background h1 {
+  // font-weight: 100;
+  text-shadow: rgba(0,0,0,0.95) 3px 3px 6px;
+  @media screen and (max-width: $break-four-hundred) {
+    font-size: 3.5rem;
+  }
+}
+
+.frosted-background p {
+  text-shadow: rgba(0,0,0,0.95) 3px 3px 6px;
+}
+
+.btn-journey {
+  color: $gold-yellow;
+  border-color: $gold-yellow;
+  transition: all 0.4s;
+}
+
+.btn-journey:hover {
+  color: black;
+  background-color: $gold-yellow;
+  transform: scale(1.2) translateY(-3px);
+}
+
+.button-bottom-margin {
+  margin-bottom: 20px;
+  border-radius: 0;
 }
