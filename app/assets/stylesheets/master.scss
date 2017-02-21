@@ -1,1 +1,23 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+$gold-yellow: rgba(224,172,42,1);
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+  -webkit-box-shadow: 0px 3px 3px 0px $gold-yellow;
+     -moz-box-shadow: 0px 3px 3px 0px $gold-yellow;
+          box-shadow: 0px 3px 3px 0px $gold-yellow;
+}
+
+.navbar-inverse .navbar-nav .nav-link {
+  color: $gold-yellow !important;
+  transition: transform 0.2s;
+}
+
+.navbar-inverse .navbar-nav .nav-link:hover {
+  transform: scale(1.2);
+}
