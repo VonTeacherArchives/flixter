@@ -39,9 +39,9 @@ body {
       //  -o-background-size: cover;
           background-size: cover;
   height: 370px;
-  -webkit-box-shadow: 0px 3px 3px 0px $gold-yellow;
-     -moz-box-shadow: 0px 3px 3px 0px $gold-yellow;
-          box-shadow: 0px 3px 3px 0px $gold-yellow;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,1);
+     -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,1);
+          box-shadow: 0px 3px 3px 0px rgba(0,0,0,1);
 }
 
 .frosted-background {
@@ -77,4 +77,30 @@ body {
 .button-bottom-margin {
   margin-bottom: 20px;
   border-radius: 0;
+}
+
+.feature {
+  position: relative;
+  z-index: -1;
+  background-color: $gold-yellow;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1.0rem;
+}
+
+.feature-sublet {
+  // border: 1px solid red;
+  padding-left: 8px;
+}
+
+.feature-sublet h3 {
+  margin-bottom: 1rem;
+}
+
+.feature-sublet p {
+  text-align: left;
+  line-height: 1.2;
 }
