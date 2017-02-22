@@ -3,14 +3,33 @@
 
 $gold-yellow: rgba(224,172,42,1);
 $break-first: 991px;
-$break-four-hundred: 400px;
+$break-four-hundred: 440px;
+
+html {
+  height: 100%;
+}
 
 body {
   font-family: 'Lato', sans-serif;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.container {
-  padding: 0;
+#flex-content-container {
+  flex: 1;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  background-color: black;
+  color: white;
+}
+
+#footer a {
+  color: $gold-yellow;
 }
 
 .navbar {
