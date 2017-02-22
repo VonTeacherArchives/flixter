@@ -32,6 +32,17 @@ body {
   transform: scale(1.2);
 }
 
+.stop-it {
+  transform: none !important;
+}
+
+// remove margin if flash notice or alert is present
+p.alert {
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
 .hero {
   background: image_url('hero-med.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -103,4 +114,24 @@ body {
 .feature-sublet p {
   text-align: left;
   line-height: 1.2;
+}
+
+// background color class for user pages
+.bg-gold {
+  background-color: $gold-yellow;
+}
+
+// color links on user pages to black
+.bg-black,
+.bg-black a {
+  color: black;
+}
+
+.bg-button {
+  background-color: black;
+  color: $gold-yellow;
+}
+
+input[type=submit]{
+  cursor: pointer;
 }

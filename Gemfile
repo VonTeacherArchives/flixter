@@ -54,3 +54,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Bootstrap 4 ruby gem for Ruby on Rails (Sprockets) and Compass.
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# SimpleForm by Plataformatec
+gem 'simple_form'
+
+# Devise by Plataformatec
+gem 'devise'
