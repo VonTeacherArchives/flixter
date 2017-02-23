@@ -1,0 +1,15 @@
+<div class="container bg-gold">
+  <div class="col-10 offset-1">
+    <br />
+    <h2>Add a New Course</h2>
+    <%= simple_form_for @course, url: instructor_courses_path do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :cost %>
+      <br />
+      <%= f.submit 'Add Course', class: 'btn bg-button' %>
+      <br />
+    <% end %>
+    <br />
+  </div>
+</div>
