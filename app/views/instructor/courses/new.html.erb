@@ -3,9 +3,14 @@
     <br />
     <h2>Add a New Course</h2>
     <%= simple_form_for @course, url: instructor_courses_path do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :cost %>
+
+      <% if @course.errors.any? %>
+        <%= render 'new_course_input_errors' %>
+      <% end %>
+
+      <%= f.input :title, error: "!" %>
+      <%= f.input :description, error: "!" %>
+      <%= f.input :cost, error: "!" %>
       <br />
       <%= f.submit 'Add Course', class: 'btn bg-button' %>
       <br />

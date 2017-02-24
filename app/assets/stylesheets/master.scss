@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,400,700');
 
 $gold-yellow: rgba(224,172,42,1);
+$app-black: #292b2c;
 $break-first: 991px;
 $break-four-hundred: 440px;
 
@@ -24,7 +25,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 50px;
-  background-color: black;
+  background-color: $app-black;
   color: white;
 }
 
@@ -104,7 +105,7 @@ p.alert {
 }
 
 .btn-journey:hover {
-  color: black;
+  color: $app-black;
   background-color: $gold-yellow;
   transform: scale(1.2) translateY(-3px);
 }
@@ -148,14 +149,20 @@ p.alert {
 // color links on user pages to black
 .bg-black,
 .bg-black a {
-  color: black;
+  color: $app-black;
 }
 
 .bg-button {
-  background-color: black;
+  background-color: $app-black;
   color: $gold-yellow;
 }
 
 input[type=submit]{
   cursor: pointer;
+}
+
+.data-submit-error {
+  border: 3px solid $app-black;
+  padding: 12px 10px 0 10px;
+  margin-bottom: 15px;
 }

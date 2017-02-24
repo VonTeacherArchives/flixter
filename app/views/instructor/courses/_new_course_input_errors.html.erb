@@ -1,0 +1,10 @@
+<div class="data-submit-error">
+  <%= pluralize(@course.errors.count, "error") %> prevented this course from being added:
+  <ul>
+    <% @course.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <% end %>
+  </ul>
+</div>
