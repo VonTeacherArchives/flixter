@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,400,700');
 
 $gold-yellow: rgba(224,172,42,1);
+$gold-yell-tendarker: rgba(199, 153, 38, 1);
 $app-black: #292b2c;
 $break-first: 991px;
+$break-small: 575px;
 $break-four-hundred: 440px;
 
 html {
@@ -15,6 +17,10 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+hr {
+  background-color: $app-black;
 }
 
 #flex-content-container {
@@ -157,7 +163,7 @@ p.alert {
   color: $gold-yellow;
 }
 
-input[type=submit]{
+input[type=submit] {
   cursor: pointer;
 }
 
@@ -169,4 +175,41 @@ input[type=submit]{
 
 .clr {
   clear: both;
+}
+
+// Course show page
+a.course-title {
+  color: $app-black;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+a.course-title:hover {
+  background-color: $gold-yell-tendarker;
+}
+
+.btn-course {
+  @media screen and (max-width: $break-small) {
+    margin-top: 10px;
+  }
+}
+
+.btn-course,
+.btn-course:focus {
+  color: $gold-yellow;
+  background-color: $app-black;
+  transition: all 0.4s;
+}
+
+.btn-course:hover {
+  color: $app-black;
+  background-color: $gold-yellow;
+  border: 1px solid $app-black;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.btn-course:active {
+  color: $app-black;
+  transform: translate(2px 2px);
 }

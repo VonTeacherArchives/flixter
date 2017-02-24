@@ -1,12 +1,16 @@
 <div class="container bg-gold">
   <div class="col-10 offset-1">
     <br />
+    <pre>Instructor View</pre>
+    <span class="badge badge-pill badge-success"><%= link_to 'Return to Student View', course_path(@course), class: 'bg-black' %></span>
     <h2 class="text-center">
       <%= @course.title %>
+    </h2>
       <br />
       <%= @course.description %>
-      <br />
-      <%= "$#{@course.cost.to_i}" %>
-    </h2>
+      <span class="badge badge-pill badge-default">
+      <%= "#{number_to_currency @course.cost}" %>
+      </span>
   </div>
+  <br />
 </div>
