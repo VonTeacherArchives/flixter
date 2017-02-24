@@ -24,7 +24,7 @@
           <% end %>
           <div class="collapse navbar-collapse" id="flix-cap-toggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="#">See All Courses</a>
+              <%= link_to 'See All Courses', courses_path, class: 'nav-item nav-link' %>
             </div>
 
             <%= render 'layouts/user_nav' %>

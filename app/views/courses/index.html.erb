@@ -1,0 +1,23 @@
+<div class="container bg-gold">
+  <div class="col-10 offset-1">
+    <br />
+    <h2 class="text-center">Welcome to the Journey</h2>
+    <br />
+    <% @courses.each do |course| %>
+      <h3>
+        <%= course.title %>
+      </h3>
+      <div class="row">
+        <div class="col-sm-8 col-12">
+          <%= course.description %> (<%= "$#{course.cost.to_i}" %>)
+        </div>
+        <div class="col-sm-4 col-12 text-center">
+          <%= link_to 'Button', '#', class: 'btn bg-button btn-large' %>
+        </div>
+      </div>
+      <br />
+      <div class="clr"></div>
+    <% end %>
+    <br />
+  </div>
+</div>

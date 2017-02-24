@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :courses, only: [:new, :create, :show]
   end
 
+  resources :courses, only: [:index, :show]
+
 end
