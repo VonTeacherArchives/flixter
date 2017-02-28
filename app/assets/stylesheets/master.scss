@@ -154,7 +154,8 @@ p.alert {
 
 // color links on user pages to black
 .bg-black,
-.bg-black a {
+.bg-black a,
+.bg-black:hover {
   color: $app-black;
 }
 
@@ -195,13 +196,16 @@ a.course-title:hover {
 }
 
 .btn-course,
-.btn-course:focus {
+.btn-course:focus
+.btn-course-nobreak,
+.btn-course-nobreak:focus {
   color: $gold-yellow;
   background-color: $app-black;
   transition: all 0.4s;
 }
 
-.btn-course:hover {
+.btn-course:hover,
+.btn-course-nobreak:hover {
   color: $app-black;
   background-color: $gold-yellow;
   border: 1px solid $app-black;
@@ -209,7 +213,12 @@ a.course-title:hover {
   transform: scale(1.1);
 }
 
-.btn-course:active {
+.btn-course:active,
+.btn-course-nobreak:active {
   color: $app-black;
   transform: translate(2px 2px);
+}
+
+.no-ul-padding {
+  padding-left: 0px;
 }
