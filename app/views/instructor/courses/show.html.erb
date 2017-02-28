@@ -18,18 +18,19 @@
           <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn bg-button btn-course-nobreak' %>
           </div>
           <br />
+          <br />
           <div class="col-md-9 col-12">
             <li>
-              <%= section.title %>
-                <ul>
+              &laquo;<%= section.title %>&raquo;
+                <ol>
                   <% section.lessons.each do |lesson| %>
                   <li>
-                    <strong><%= lesson.title %></strong>
-                    -
+                    <b><%= lesson.title %></b>
+                    <br />
                     <%= lesson.subtitle %>
                   </li>
                   <% end %>
-                </ul>
+                </ol>
               <br class="clr" />
             </li>
           </div>
