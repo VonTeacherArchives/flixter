@@ -1,7 +1,7 @@
 <div class="container bg-gold">
   <div class="col-10 offset-1">
     <br />
-    <pre>Instructor View</pre>
+    <pre class="text-center">Instructor View</pre>
     <span class="badge badge-pill badge-success"><%= link_to 'Return to Student View', course_path(@course), class: 'bg-black' %></span>
     <h2 class="text-center">
       <%= @course.title %>
@@ -11,6 +11,18 @@
       <span class="badge badge-pill badge-default">
       <%= "#{number_to_currency @course.cost}" %>
       </span>
+      <br />
+      <br />
+      <ul>
+        <% @course.sections.each do |section| %>
+        <li>
+          <%= section.title %>
+        </li>
+        <% end %>
+      </ul>
+
+      <br />
+      <pre><%= link_to '+ Add a Section to this Course', new_instructor_course_section_path(@course), class: 'bg-black'%></pre>
   </div>
   <br />
 </div>

@@ -1,0 +1,12 @@
+<div class="container bg-gold">
+  <div class="col-10 offset-1">
+    <br />
+    <h2>Add a New Section:</h2>
+    <%= simple_form_for @section, url: instructor_course_sections_path(@course) do |section| %>
+    <%= section.input :title %>
+    <br />
+    <%= section.submit 'Add This Section', class: 'btn bg-button' %>
+    <% end %>
+    <br />
+  </div>
+</div>
