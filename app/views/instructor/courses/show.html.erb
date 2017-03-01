@@ -2,18 +2,18 @@
   <div class="col-10 offset-1">
     <br />
     <pre class="text-center">Instructor View</pre>
-    <span class="badge badge-pill badge-success"><%= link_to 'Return to Student View', course_path(@course), class: 'bg-black' %></span>
+    <span class="badge badge-pill badge-success"><%= link_to 'Return to Student View', course_path(current_course), class: 'bg-black' %></span>
     <h2 class="text-center">
-      <%= @course.title %>
+      <%= current_course.title %>
     </h2>
       <div>
-        <%= @course.description %>
+        <%= current_course.description %>
         <span class="badge badge-pill badge-default"><%= "#{number_to_currency @course.cost}" %></span>
       </div>
       <br />
       <ul class="no-ul-padding">
         <div class="row">
-          <% @course.sections.each do |section| %>
+          <% current_course.sections.each do |section| %>
           <div class="col-md-3 col-12 text-center">
           <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn bg-button btn-course-nobreak' %>
           </div>
@@ -39,7 +39,7 @@
       </ul>
 
       <br />
-      <strong><%= link_to '+ Add a Section to this Course', new_instructor_course_section_path(@course), class: 'bg-black'%></strong>
+      <strong><%= link_to '+ Add a Section to this Course', new_instructor_course_section_path(current_course), class: 'bg-black'%></strong>
   </div>
   <br />
 </div>

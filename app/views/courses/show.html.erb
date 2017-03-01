@@ -11,7 +11,11 @@
     <div class="row">
       <div class="col-sm-3 col-12 text-center">
         <span class="badge badge-pill badge-default">
-        Cost: <%= number_to_currency @course.cost %>
+          <% if @course.cost == 0 %>
+            FREE
+          <% else %>
+            <%= "#{number_to_currency course.cost}" %>
+          <% end %>
         </span>
         <div class="bg-black">
 <!-- Condition for instructor page access -->
