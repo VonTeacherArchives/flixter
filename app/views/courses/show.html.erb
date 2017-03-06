@@ -9,7 +9,13 @@
       <%= @course.title %>
     </h2>
     <div class="row">
-      <div class="col-sm-3 col-12 text-center">
+      <div class="col-sm-4 col-12 text-center">
+        <%= image_tag @course.image, class: 'img-fluid course-image-border-shadow margin-below-course-image' %>
+        <h4 class="h4-image-overlay"><span>Course Details</span></h4>
+
+      </div>
+      <div class="col-sm-8 col-12">
+        <%= @course.description %>
         <span class="badge badge-pill badge-default">
           <% if @course.cost == 0 %>
             FREE
@@ -17,6 +23,7 @@
             <%= "#{number_to_currency @course.cost}" %>
           <% end %>
         </span>
+
         <div class="bg-black">
 <!-- Condition for instructor page access -->
         <% if current_user && current_user == @course.user %>
@@ -26,9 +33,7 @@
         <% end %>
 <!-- END condition -->
         </div>
-      </div>
-      <div class="col-sm-9 col-12">
-        <%= @course.description %>
+
       </div>
     </div>
     <div class="col-12">

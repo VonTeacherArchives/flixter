@@ -8,6 +8,21 @@
         <%= link_to course.title, course_path(course), class: 'course-title' %>
       </h3>
       <div class="row">
+        <div class="col-sm-4 col-12 text-center">
+
+          <%= link_to course_path(course) do %>
+          <div>
+            <%= image_tag course.image, class: 'img-fluid course-image-border-shadow margin-below-course-image' %>
+            <% if course.image.present? %>
+            <h4 class="h4-image-overlay"><span>View Course</span></h4>
+            <% end %>
+          </div>
+          <button class="btn btn-course btn-large">Details</button>
+          <!-- <%= link_to 'Details', course_path(course), class: 'btn btn-course btn-large' %> -->
+
+          <% end %>
+
+        </div>
         <div class="col-sm-8 col-12">
           <%= course.description %>
           <span class="badge badge-pill badge-default">
@@ -19,9 +34,6 @@
           <% end %>
 <!-- END Condition -->
           </span>
-        </div>
-        <div class="col-sm-4 col-12 text-center">
-          <%= link_to 'View Course', course_path(course), class: 'btn btn-course btn-large' %>
         </div>
         <hr />
       </div>

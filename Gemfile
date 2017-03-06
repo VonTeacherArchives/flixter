@@ -60,3 +60,12 @@ gem 'simple_form'
 
 # Devise by Plataformatec
 gem 'devise'
+
+# Carrierwave image upload gem
+gem 'carrierwave', '~> 1.0'
+
+# Figaro gem for use with AWS
+gem 'figaro'
+
+# Fog gem for Carrierwave to AS3 communication
+gem 'fog'

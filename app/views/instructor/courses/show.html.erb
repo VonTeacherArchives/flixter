@@ -6,10 +6,15 @@
     <h2 class="text-center">
       <%= current_course.title %>
     </h2>
-      <div>
-        <%= current_course.description %>
-        <span class="badge badge-pill badge-default"><%= "#{number_to_currency @course.cost}" %></span>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <%= image_tag current_course.image, class: 'img-fluid margin-below-course-image course-image-border-shadow' %>
       </div>
+      <div class="col-12 col-md-8">
+        <%= current_course.description %>
+        <span class="badge badge-pill badge-default"><%= "#{number_to_currency current_course.cost}" %></span>
+      </div>
+    </div>
       <br />
       <ul class="no-ul-padding">
         <div class="row">

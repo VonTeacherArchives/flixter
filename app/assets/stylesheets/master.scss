@@ -191,7 +191,7 @@ a.course-title:hover {
 
 .btn-course {
   @media screen and (max-width: $break-small) {
-    margin-top: 10px;
+    // margin-top: 10px;
   }
 }
 
@@ -201,7 +201,11 @@ a.course-title:hover {
 .btn-course-nobreak:focus {
   color: $gold-yellow;
   background-color: $app-black;
+  cursor: pointer;
   transition: all 0.4s;
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
 }
 
 .btn-course:hover,
@@ -226,4 +230,32 @@ a.course-title:hover {
 
 .error-bottom-margin {
   margin-bottom: 20px;
+}
+
+.course-image-border-shadow {
+  border: 1px solid $app-black;
+  -webkit-box-shadow: 0px 3px 3px -1px $app-black;
+     -moz-box-shadow: 0px 3px 3px -1px $app-black;
+          box-shadow: 0px 3px 3px -1px $app-black;
+  position: relative;
+}
+
+.margin-below-course-image {
+  margin-bottom: 12px;
+}
+
+.h4-image-overlay {
+  position: absolute;
+  bottom: 14px;
+  display: none;
+  @media screen and (max-width: $break-small) {
+    display: block;
+  }
+}
+
+.h4-image-overlay span {
+  color: white;
+  background: rgb(41, 43, 44);
+  background: rgba(41, 43, 44, 0.7);
+  padding: 10px;
 }
