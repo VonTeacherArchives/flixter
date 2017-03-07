@@ -11,8 +11,13 @@
     <div class="row">
       <div class="col-sm-4 col-12 text-center">
         <%= image_tag @course.image, class: 'img-fluid course-image-border-shadow margin-below-course-image' %>
-        <h4 class="h4-image-overlay"><span>Course Details</span></h4>
-
+        <% if @course.image.present? %>
+        <h4 class="h4-image-overlay">
+          <span>
+            Taught by <%= @course.user.email[0..2] + '...' %>
+          </span>
+        </h4>
+        <% end %>
       </div>
       <div class="col-sm-8 col-12">
         <%= @course.description %>
