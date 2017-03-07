@@ -69,3 +69,6 @@ gem 'figaro'
 
 # Fog gem for Carrierwave to AS3 communication
 gem 'fog'
+
+# MiniMagick for ImageMagick
+gem 'mini_magick'
