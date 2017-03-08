@@ -23,6 +23,13 @@ hr {
   background-color: $app-black;
 }
 
+.container {
+  @media screen and (max-width: $break-small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 #flex-content-container {
   flex: 1;
 }
@@ -33,6 +40,8 @@ hr {
   min-height: 50px;
   background-color: $app-black;
   color: white;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #footer a {
@@ -189,6 +198,12 @@ a.course-title:hover {
   background-color: $gold-yell-tendarker;
 }
 
+.course-title-centeronsmall {
+  @media screen and (max-width: $break-small) {
+    text-align: center !important;
+  }
+}
+
 .btn-course {
   @media screen and (max-width: $break-small) {
     // margin-top: 10px;
@@ -258,4 +273,10 @@ a.course-title:hover {
   background: rgb(41, 43, 44);
   background: rgba(41, 43, 44, 0.7);
   padding: 10px;
+}
+
+.hide-badge-under575 {
+  @media screen and (max-width: $break-small) {
+    display: none;
+  }
 }

@@ -2,9 +2,9 @@
   <div class="col-10 offset-1">
     <br />
     <h2 class="text-center">Welcome to the Journey</h2>
-    <br />
+    <p class="text-center">Please select a course below:</p>
     <% @courses.each do |course| %>
-      <h3>
+      <h3 class="course-title-centeronsmall">
         <%= link_to course.title, course_path(course), class: 'course-title' %>
       </h3>
       <div class="row">
@@ -14,7 +14,15 @@
           <div>
             <%= image_tag course.image, class: 'img-fluid course-image-border-shadow margin-below-course-image' %>
             <% if course.image.present? %>
-            <h4 class="h4-image-overlay"><span>View Course</span></h4>
+            <h4 class="h4-image-overlay">
+              <span>
+                <% if course.cost == 0 %>
+                  FREE
+                <% else %>
+                  <%= "#{number_to_currency course.cost}" %>
+                <% end %>
+              </span>
+            </h4>
             <% end %>
           </div>
           <button class="btn btn-course btn-large">Details</button>
@@ -25,7 +33,7 @@
         </div>
         <div class="col-sm-8 col-12">
           <%= course.description %>
-          <span class="badge badge-pill badge-default">
+          <span class="badge badge-pill badge-default hide-badge-under575">
 <!-- Condition to display FREE or course.cost -->
           <% if course.cost == 0 %>
             FREE
@@ -35,7 +43,6 @@
 <!-- END Condition -->
           </span>
         </div>
-        <hr />
       </div>
       <hr />
       <div class="clr"></div>
