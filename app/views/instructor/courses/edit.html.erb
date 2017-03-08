@@ -2,9 +2,9 @@
   <div class="col-10 offset-1">
     <br />
     <h2>Add a New Course</h2>
-    <%= simple_form_for @course, url: instructor_courses_path, multipart: true do |f| %>
+    <%= simple_form_for current_course, url: instructor_course_path(current_course) do |f| %>
 
-      <% if @course.errors.any? %>
+      <% if current_course.errors.any? %>
         <%= render 'new_course_input_errors' %>
       <% end %>
 
@@ -13,7 +13,7 @@
       <%= f.input :image %>
       <%= f.input :cost, error: "!" %>
       <br />
-      <%= f.submit 'Add Course', class: 'btn bg-button' %>
+      <%= f.submit 'Edit Course', class: 'btn bg-button' %>
       <br />
     <% end %>
     <br />

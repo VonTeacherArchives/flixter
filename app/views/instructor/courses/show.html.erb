@@ -2,7 +2,8 @@
   <div class="col-10 offset-1">
     <br />
     <pre class="text-center">Instructor View</pre>
-    <span class="badge badge-pill badge-success"><%= link_to 'Return to Student View', course_path(current_course), class: 'bg-black' %></span>
+    <span class="badge badge-pill badge-success"><%= link_to 'Student View', course_path(current_course), class: 'bg-black' %></span>
+    <span class="badge badge-pill badge-danger"><%= link_to 'Edit Course', edit_instructor_course_path(current_course), class: 'bg-black' %></span>
     <h2 class="text-center">
       <%= current_course.title %>
     </h2>

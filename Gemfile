@@ -62,13 +62,16 @@ gem 'simple_form'
 gem 'devise'
 
 # Carrierwave image upload gem
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 
 # Figaro gem for use with AWS
 gem 'figaro'
 
 # Fog gem for Carrierwave to AS3 communication
-gem 'fog'
+# gem 'fog'
 
 # MiniMagick for ImageMagick
 gem 'mini_magick'
+
+# AWS specific Carrierwave
+gem 'carrierwave-aws'

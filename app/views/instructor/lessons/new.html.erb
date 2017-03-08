@@ -6,6 +6,7 @@
     <%= simple_form_for @lesson, url: instructor_section_lessons_path(current_section) do |lesson| %>
       <%= lesson.input :title %>
       <%= lesson.input :subtitle %>
+      <%= lesson.input :video %>
       <%= lesson.submit 'Add This Lesson', class: 'btn bg-button' %>
     <% end %>
     <br />
