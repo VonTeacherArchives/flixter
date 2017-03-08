@@ -5,6 +5,7 @@ $gold-yellow: rgba(224,172,42,1);
 $gold-yell-tendarker: rgba(199, 153, 38, 1);
 $app-black: #292b2c;
 $break-first: 991px;
+$break-medium: 767px;
 $break-small: 575px;
 $break-four-hundred: 440px;
 
@@ -278,5 +279,48 @@ a.course-title:hover {
 .hide-badge-under575 {
   @media screen and (max-width: $break-small) {
     display: none;
+  }
+}
+
+.section {
+  border: 1px solid $app-black;
+  -webkit-box-shadow: 0px 3px 3px -1px $app-black;
+     -moz-box-shadow: 0px 3px 3px -1px $app-black;
+          box-shadow: 0px 3px 3px -1px $app-black;
+  padding: 10px 10px 0;
+  margin-top: 20px;
+}
+
+.lesson {
+  background-color: $app-black;
+  color: $gold-yellow;
+  margin-top: 10px;
+  height: 130px;
+  padding: 15px 5px 15px;
+}
+
+.lesson a,
+.lesson a:hover {
+  color: $gold-yellow;
+  // font-weight: 100;
+  font-size: 15px;
+}
+
+.lesson a b {
+  // font-weight: 100;
+  font-size: 25px;
+}
+
+.lesson hr {
+  margin: 5px auto;
+  width: 100px;
+  background-color: $gold-yellow;
+}
+
+.expand-width-on-mobile {
+  @media screen and (max-width: $break-medium) {
+    margin-left: 0;
+    // width: 100%;
+    max-width: 100%;
   }
 }
