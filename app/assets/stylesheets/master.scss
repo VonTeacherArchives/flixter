@@ -33,6 +33,7 @@ hr {
 
 #flex-content-container {
   flex: 1;
+  background-color: $gold-yellow;
 }
 
 #footer {
@@ -58,7 +59,7 @@ hr {
   -webkit-box-shadow: 0px 3px 3px 0px $gold-yellow;
      -moz-box-shadow: 0px 3px 3px 0px $gold-yellow;
           box-shadow: 0px 3px 3px 0px $gold-yellow;
-  z-index: 1;
+  z-index: 3;
 }
 
 .navbar-inverse .navbar-nav .nav-link {
@@ -94,6 +95,7 @@ p.alert {
   -webkit-box-shadow: 0px 3px 3px -1px rgba(0,0,0,1);
      -moz-box-shadow: 0px 3px 3px -1px rgba(0,0,0,1);
           box-shadow: 0px 3px 3px -1px rgba(0,0,0,1);
+  z-index: 2;
 }
 
 .frosted-background {
@@ -133,11 +135,12 @@ p.alert {
 
 .feature {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   background-color: $gold-yellow;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
+  margin-top: 3px;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 1.0rem;
@@ -323,4 +326,9 @@ a.course-title:hover {
     // width: 100%;
     max-width: 100%;
   }
+}
+
+.flush-padding-with-title {
+    padding-left: 0;
+    padding-right: 0;
 }
