@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
   belongs_to :user
   has_many :sections, dependent: :destroy
+  has_many :enrollments, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   validates :title, presence: true

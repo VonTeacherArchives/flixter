@@ -116,7 +116,8 @@ p.alert {
   text-shadow: rgba(0,0,0,0.95) 3px 3px 6px;
 }
 
-.btn-journey {
+.btn-journey,
+.btn-journey:focus {
   color: $gold-yellow;
   border-color: $gold-yellow;
   transition: all 0.4s;
@@ -232,7 +233,7 @@ a.course-title:hover {
   color: $app-black;
   background-color: $gold-yellow;
   border: 1px solid $app-black;
-  font-weight: bold;
+  // font-weight: bold;
   transform: scale(1.1);
 }
 
@@ -240,6 +241,38 @@ a.course-title:hover {
 .btn-course-nobreak:active {
   color: $app-black;
   transform: translate(2px 2px);
+}
+
+.btn-enroll,
+.btn-enroll:focus {
+  color: $gold-yellow;
+  background-color: $app-black;
+  cursor: pointer;
+  font-size: 150%;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  @media screen and (max-width: $break-medium) {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.course-page-enrolled {
+  border: 1px solid $app-black;
+  border-radius: 5px;
+  line-height: 3rem;
+  margin-top: 12px;
+  -webkit-box-shadow: 0px 0px 3px 3px $app-black;
+     -moz-box-shadow: 0px 0px 3px 3px $app-black;
+          box-shadow: 0px 0px 3px 3px $app-black;
+
+}
+
+.btn-enroll:hover {
+  color: $app-black;
+  background-color: $gold-yellow;
+  border: 1px solid $app-black;
+  transform: scale(1.1);
 }
 
 .no-ul-padding {
