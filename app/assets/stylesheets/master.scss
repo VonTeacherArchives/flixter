@@ -251,10 +251,17 @@ a.course-title:hover {
   font-size: 150%;
   text-transform: uppercase;
   transition: all 0.4s;
+  margin-top: 10px;
   @media screen and (max-width: $break-medium) {
     width: 100%;
-    margin-top: 10px;
   }
+}
+
+.btn-enroll:hover {
+  color: $app-black;
+  background-color: $gold-yellow;
+  border: 1px solid $app-black;
+  transform: scale(1.1);
 }
 
 .course-page-enrolled {
@@ -263,16 +270,9 @@ a.course-title:hover {
   line-height: 3rem;
   margin-top: 12px;
   -webkit-box-shadow: 0px 0px 3px 3px $app-black;
-     -moz-box-shadow: 0px 0px 3px 3px $app-black;
-          box-shadow: 0px 0px 3px 3px $app-black;
+  -moz-box-shadow: 0px 0px 3px 3px $app-black;
+  box-shadow: 0px 0px 3px 3px $app-black;
 
-}
-
-.btn-enroll:hover {
-  color: $app-black;
-  background-color: $gold-yellow;
-  border: 1px solid $app-black;
-  transform: scale(1.1);
 }
 
 .no-ul-padding {
