@@ -1,6 +1,8 @@
 <div class="container bg-gold">
   <div class="col-10 offset-1">
     <br />
+    <%= link_to "Back to #{current_lesson.section.course.title}", course_path(current_lesson.section.course), class: 'bg-black' %>
+    <br />
     <h2><%= current_lesson.title %></h2>
     <%= current_lesson.subtitle %>
 
