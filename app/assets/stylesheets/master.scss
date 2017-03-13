@@ -264,6 +264,10 @@ a.course-title:hover {
   transform: scale(1.1);
 }
 
+button.stripe-button-el {
+  margin-top: 13px;
+}
+
 .course-page-enrolled {
   border: 1px solid $app-black;
   border-radius: 5px;
