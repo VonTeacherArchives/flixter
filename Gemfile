@@ -75,3 +75,6 @@ gem 'mini_magick'
 
 # AWS specific Carrierwave
 gem 'carrierwave-aws'
+
+# Stripe
+gem 'stripe'
