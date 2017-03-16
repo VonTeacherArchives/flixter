@@ -16,18 +16,20 @@
         <span class="badge badge-pill badge-default"><%= "#{number_to_currency current_course.cost}" %></span>
       </div>
     </div>
+
+      <div class="add-section"><%= link_to '+ Add a Section to this Course', new_instructor_course_section_path(current_course), class: 'bg-black'%></div>
       <br />
-      <ul class="no-ul-padding">
-        <div class="row">
-          <% current_course.sections.each do |section| %>
-          <div class="col-md-3 col-12 text-center">
-          <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'btn bg-button btn-course-nobreak' %>
-          </div>
-          <br />
-          <br />
-          <div class="col-md-9 col-12">
-            <li>
-              &laquo;<%= section.title %>&raquo;
+
+      <ul class="no-ul-padding sections">
+        <!-- <div class="row"> -->
+          <% current_course.sections.rank(:row_order).each do |section| %>
+          <!-- <div class="col-12"> -->
+
+            <li data-update-url="<%= instructor_section_path(section) %>">
+              <h3>
+                <%= section.title %>
+                <%= link_to '+Lesson', new_instructor_section_lesson_path(section) %>
+              </h3>
                 <ol class="lessons">
                   <% section.lessons.rank(:row_order).each do |lesson| %>
                   <li data-update-url="<%= instructor_lesson_path(lesson) %>">
@@ -39,19 +41,32 @@
                 </ol>
               <br class="clr" />
             </li>
-          </div>
-          <% end %>
-      </div>
-      </ul>
 
-      <br />
-      <strong><%= link_to '+ Add a Section to this Course', new_instructor_course_section_path(current_course), class: 'bg-black'%></strong>
+          <!-- </div> -->
+          <% end %>
+        <!-- </div> -->
+      </ul>
+      <!-- <br /> -->
+
   </div>
   <br />
 </div>
 <script>
   $(function() {
+    $('.sections').sortable({
+      placeholder: 'sortable-section-placeholder',
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+
     $('.lessons').sortable({
+      placeholder: 'sortable-lesson-placeholder',
       update: function( event, ui ) {
         $.ajax({
           type: 'PUT',
