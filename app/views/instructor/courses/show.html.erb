@@ -25,16 +25,18 @@
           <% current_course.sections.rank(:row_order).each do |section| %>
           <!-- <div class="col-12"> -->
 
-            <li data-update-url="<%= instructor_section_path(section) %>">
-              <h3>
+            <li data-update-url="<%= instructor_section_path(section) %>" class="section-borders">
+              <span class="fa fa-ellipsis-v sectiondrag"></span>
+              <h3 class="text-center">
                 <%= section.title %>
-                <%= link_to '+Lesson', new_instructor_section_lesson_path(section) %>
+                <%= link_to '<span class="fa fa-plus-circle"></span> Lesson'.html_safe, new_instructor_section_lesson_path(section), class: 'bg-black h6' %>
               </h3>
                 <ol class="lessons">
                   <% section.lessons.rank(:row_order).each do |lesson| %>
-                  <li data-update-url="<%= instructor_lesson_path(lesson) %>">
+                  <li data-update-url="<%= instructor_lesson_path(lesson) %>" class="lesson height-for-sorting">
+                    <span class="fa fa-ellipsis-v lessondrag"></span>
                     <b><%= lesson.title %></b>
-                    <br />
+                    <hr />
                     <%= lesson.subtitle %>
                   </li>
                   <% end %>

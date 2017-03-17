@@ -2,8 +2,8 @@
   <div class="col-10 offset-1">
     <br />
     <%= link_to "Back to #{current_lesson.section.course.title}", course_path(current_lesson.section.course), class: 'bg-black' %>
-    <br />
-    <h2><%= current_lesson.title %></h2>
+    <br /><br />
+    <h2><%= current_lesson.section.title %>: <%= current_lesson.title %></h2>
     <%= current_lesson.subtitle %>
 
     <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" poster="<%= image_path('hero-med.jpg') %>" data-setup="{}">
