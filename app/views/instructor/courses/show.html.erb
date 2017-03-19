@@ -17,7 +17,12 @@
       </div>
     </div>
 
-      <div class="add-section"><%= link_to '+ Add a Section to this Course', new_instructor_course_section_path(current_course), class: 'bg-black'%></div>
+      <div class="add-section">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-course" data-toggle="modal" data-target="#newSectionModal">
+          Add a Section to this Course
+        </button>
+      </div>
       <br />
 
       <ul class="no-ul-padding sections">
@@ -53,6 +58,32 @@
   </div>
   <br />
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="newSectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newSectionModalLabel">Add a Section to this Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |section| %>
+        <div class="modal-body">
+          <%= section.input :title %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <%= section.submit 'Add Section', class: 'btn bg-button' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
 <script>
   $(function() {
     $('.sections').sortable({

@@ -430,7 +430,7 @@ span.fa-ellipsis-v.lessondrag {
 
 .add-section {
   font-size: 24px;
-  border: 1px solid $app-black;
+  // border: 1px solid $app-black;
   text-align: center !important;
   margin-top: 10px;
   margin-bottom: -20px;
@@ -449,4 +449,16 @@ span.fa-ellipsis-v.lessondrag {
 
 .current-enrollment {
   border: 1px solid $app-black;
+}
+
+.modal-content {
+  background-color: $gold-yellow;
+}
+
+.modal-header {
+  border-bottom-color: $app-black;
+}
+
+.modal-footer {
+  border-top-color: $app-black;
 }
