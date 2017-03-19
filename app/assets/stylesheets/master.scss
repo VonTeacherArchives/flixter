@@ -79,6 +79,12 @@ hr {
   transform: none !important;
 }
 
+.nav-separator {
+  @media screen and (max-width: $break-first) {
+    display: none;
+  }
+}
+
 // remove margin if flash notice or alert is present
 p.alert {
   margin-bottom: 0;
@@ -172,6 +178,10 @@ p.alert {
 .bg-black a,
 .bg-black:hover {
   color: $app-black;
+}
+
+.dashboard-course {
+  text-decoration: underline !important;
 }
 
 .bg-button {
@@ -305,7 +315,7 @@ ol {
   margin-bottom: 12px;
 }
 
-.h4-image-overlay {
+.on-small-image-overlay {
   position: absolute;
   bottom: 14px;
   display: none;
@@ -314,7 +324,7 @@ ol {
   }
 }
 
-.h4-image-overlay span {
+.on-small-image-overlay span {
   color: white;
   background: rgb(41, 43, 44);
   background: rgba(41, 43, 44, 0.7);
@@ -435,4 +445,8 @@ span.fa-ellipsis-v.lessondrag {
 
 .video-js {
   overflow: hidden;
+}
+
+.current-enrollment {
+  border: 1px solid $app-black;
 }

@@ -14,15 +14,15 @@
           <div>
             <%= image_tag course.image, class: 'img-fluid course-image-border-shadow margin-below-course-image' %>
             <% if course.image.present? %>
-            <h4 class="h4-image-overlay">
-              <span>
-                <% if course.cost == 0 %>
-                  FREE
-                <% else %>
-                  <%= "#{number_to_currency course.cost}" %>
-                <% end %>
-              </span>
-            </h4>
+              <h4 class="on-small-image-overlay">
+                <span>
+                  <% if course.cost == 0 %>
+                    FREE
+                  <% else %>
+                    <%= "#{number_to_currency course.cost}" %>
+                  <% end %>
+                </span>
+              </h4>
             <% end %>
           </div>
           <button class="btn btn-course btn-large">Details</button>
