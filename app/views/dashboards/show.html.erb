@@ -32,22 +32,23 @@
           <hr/>
       <% end %>
     <% end %>
+    <hr />
     <div class="text-center">Courses I'm Teaching:</div>
     <% if current_user.courses[0].nil? %>
       <p>You are not teaching any courses.</p>
     <% else %>
       <% current_user.courses.each do |course| %>
         <h3 class="course-title-centeronsmall">
-          <%= link_to course.title, course_path(course), class: 'course-title' %>
+          <%= link_to course.title, instructor_course_path(course), class: 'course-title' %>
         </h3>
         <div class="row">
           <div class="col-sm-4 col-12">
-            <%= link_to course_path(course) do %>
+            <%= link_to instructor_course_path(course) do %>
               <%= image_tag course.image, class: 'img-fluid course-image-border-shadow margin-below-course-image' %>
               <% if course.image.present? %>
                 <h4 class="on-small-image-overlay">
                   <span>
-                    Click for Course Details
+                    Click to manage
                   </span>
                 </h4>
               <% end %>
@@ -55,7 +56,7 @@
           </div>
           <div class="col-sm-8 col-12">
             <p><%= course.description %></p>
-            <p><%= link_to 'More Info &raquo;'.html_safe, course_path(course), class: 'btn btn-course' %></p>
+            <p><%= link_to 'Instructor Details &raquo;'.html_safe, instructor_course_path(course), class: 'btn btn-course' %></p>
           </div>
         </div>
         <hr />
