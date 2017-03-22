@@ -67,20 +67,25 @@
           </h3>
           <div class="row">
             <% section.lessons.rank(:row_order).each do |lesson| %>
-              <div class="col-12 col-lg-6">
-                <div class="lesson text-center">
+              <% if section.lessons.count == 1%>
+                <div class="col-12">
+              <% else %>
+                <div class="col-12 col-lg-6">
+              <% end %>
+                  <div class="lesson text-center">
 
-                  <%= link_to lesson_path(lesson) do %>
-                    <b><%= lesson.title %></b>
-                    <% if lesson.video.present? %>
-                      <%= image_tag('video-play.png', size: '28x28', class: 'yellow-play-icon') %>
+                    <%= link_to lesson_path(lesson) do %>
+                      <b><%= lesson.title %></b>
+                      <% if lesson.video.present? %>
+                        <%= image_tag('video-play.png', size: '28x28', class: 'yellow-play-icon') %>
+                      <% end %>
+                      <hr />
+                      <%= lesson.subtitle %>
+                      <br />
                     <% end %>
-                    <hr />
-                    <%= lesson.subtitle %>
-                    <br />
-                  <% end %>
-                </div>
-              </div>
+
+                  </div>
+                </div> <!-- this closes either DIV based on condition -->
             <% end %>
           </div>
           <br class="clr" />
