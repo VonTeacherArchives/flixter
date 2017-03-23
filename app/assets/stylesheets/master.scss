@@ -47,13 +47,24 @@ hr {
   padding-right: 15px;
 }
 
-#footer a {
+#footer a,
+.footer-yellow,
+#footer i {
   color: $gold-yellow;
 }
 
 .footer-lead {
   font-weight: bold;
   display: block;
+}
+
+.social a {
+  text-decoration: none;
+}
+
+.social > :nth-child(n+3):nth-last-child(n+2) {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .navbar {

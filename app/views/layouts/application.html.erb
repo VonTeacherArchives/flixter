@@ -43,8 +43,38 @@
 
     <div id="footer">
       <div class="container">
-      <span class="footer-lead">Teachers</span>
-      <%= link_to 'Teach a Course', new_instructor_course_path %>
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <span class="footer-lead">Teachers</span>
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+            <br />
+            <%= link_to 'View Dashboard', dashboard_path %>
+          </div>
+          <div class="col-12 col-md-3">
+            <span class="footer-lead">About</span>
+            <%= link_to 'Team', url: '#' %>
+            <br />
+            <%= link_to 'Careers', url: '#' %>
+          </div>
+          <div class="col-12 col-md-3">
+            <span class="footer-lead">Contact</span>
+            <%= link_to 'vaughn.weiss', url: '#' %>
+            <br />
+            <span class="footer-yellow">Seattle, WA</span>
+          </div>
+          <div class="col-12 col-md-3 social">
+            <span class="footer-lead">Social</span>
+            <%= link_to 'https://github.com/VonTeacher' do %>
+              <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to 'https://medium.com/@vaughn.weiss' do %>
+              <i class="fa fa-medium fa-2x" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to 'https://twitter.com/VonTeacher' do %>
+              <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
 
