@@ -474,3 +474,10 @@ span.fa-ellipsis-v.lessondrag {
 .modal-footer {
   border-top-color: $app-black;
 }
+
+.fa-arrow-right {
+  transition: all 0.4s;
+  @media screen and (max-width: $break-medium) {
+    transform:rotate(90deg);
+  }
+}
