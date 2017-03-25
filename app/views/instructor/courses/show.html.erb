@@ -91,7 +91,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="newLessonModalLabel">Add a Lesson to (SECTION NAME)</h5>
+        <h5 class="modal-title" id="newLessonModalLabel">Add a Lesson</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -113,34 +113,35 @@
 
 <script>
   $(function() {
-    $('.sections').sortable({
+    $('.sections').sortable( {
       placeholder: 'sortable-section-placeholder',
       update: function( event, ui ) {
-        $.ajax({
+        $.ajax( {
           type: 'PUT',
           url: ui.item.data('update-url'),
           dataType: 'json',
           data: { section: { row_order_position: ui.item.index() } }
-        });
+        } );
       }
-    });
+    } );
 
-    $('.lessons').sortable({
+    $('.lessons').sortable( {
       placeholder: 'sortable-lesson-placeholder',
       update: function( event, ui ) {
-        $.ajax({
+        $.ajax( {
           type: 'PUT',
           url: ui.item.data('update-url'),
           dataType: 'json',
           data: { lesson: { row_order_position: ui.item.index() } }
-        });
+        } );
       }
-    });
+    } );
 
-    $( ".new-lesson-button" ).click(function( event ) {
+    $( ".new-lesson-button" ).click( function( event ) {
       var lessonUrl = ( $(event.target).data('lesson-url') );
+      // alert(lessonUrl);
       $('#newLessonForm').attr('action', lessonUrl);
-    });
+    } );
 
-  });
+  } );
 </script>
