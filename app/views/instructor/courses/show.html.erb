@@ -114,11 +114,6 @@
 <script>
   $(function() {
 
-    $('.new-lesson-button').click(function( event ) {
-      var lessonUrl = $( event.target).data('lesson-url');
-      $('#newLessonForm').attr('action', lessonUrl);
-    });
-        
     $('.sections').sortable( {
       placeholder: 'sortable-section-placeholder',
       update: function( event, ui ) {
@@ -143,6 +138,10 @@
       }
     } );
 
+    $('.new-lesson-button').click(function( event ) {
+      var lessonUrl = $( event.target).data('lesson-url');
+      $('#newLessonForm').attr('action', lessonUrl);
+    });
 
   } );
 </script>
