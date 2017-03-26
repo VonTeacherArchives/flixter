@@ -31,7 +31,8 @@
       <!-- <div class="row"> -->
       <% current_course.sections.rank(:row_order).each do |section| %>
       <!-- <div class="col-12"> -->
-        <li data-update-url="<%= instructor_section_path(section) %>" class="section-borders">
+      <!-- More explicit update-section-url to avoid confusion with lessons after uglify -->
+        <li data-update-section-url="<%= instructor_section_path(section) %>" class="section-borders">
           <span class="fa fa-ellipsis-v sectiondrag"></span>
           <h3 class="text-center">
             <%= section.title %>
@@ -42,8 +43,9 @@
             <!-- END Button -->
           </h3>
           <ol class="lessons">
+            <!-- More explicit update-lesson-url to avoid confusion with sections after uglify -->
             <% section.lessons.rank(:row_order).each do |lesson| %>
-              <li data-update-url="<%= instructor_lesson_path(lesson) %>" class="lesson height-for-sorting">
+              <li data-update-lesson-url="<%= instructor_lesson_path(lesson) %>" class="lesson height-for-sorting">
                 <span class="fa fa-ellipsis-v lessondrag"></span>
                 <b><%= lesson.title %></b>
                 <hr />
@@ -118,7 +120,7 @@
       update: function( event, ui ) {
         $.ajax( {
           type: 'PUT',
-          url: ui.item.data('update-url'),
+          url: ui.item.data('update-section-url'),
           dataType: 'json',
           data: { section: { row_order_position: ui.item.index() } }
         } );
@@ -132,7 +134,7 @@
       update: function( event, ui ) {
         $.ajax( {
           type: 'PUT',
-          url: ui.item.data('update-url'),
+          url: ui.item.data('update-lesson-url'),
           dataType: 'json',
           data: { lesson: { row_order_position: ui.item.index() } }
         } );
