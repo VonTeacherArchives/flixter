@@ -60,7 +60,9 @@
           </div>
           <div class="col-12 col-md-3">
             <span class="footer-lead">Contact</span>
-            <%= link_to 'vaughn.weiss', url: '#' %>
+            <%= mail_to 'vaughn.weiss+web@gmail.com' do %>
+              Vaughn Weiss
+            <% end %>
             <br />
             <span class="footer-yellow">Seattle, WA</span>
           </div>
